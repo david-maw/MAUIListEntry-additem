@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:MAUIListEntry"
+             x:Class="MAUIListEntry.MainPage"
+             BindingContext="{local:ViewModel}"
+             x:DataType="local:ViewModel"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+
+    <StackLayout>
+        <CollectionView ItemsSource="{Binding StringList}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <Label Text="{Binding}"/>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Test" Command="{Binding TestCommand}"/>
+    </StackLayout>
+</ContentPage>
